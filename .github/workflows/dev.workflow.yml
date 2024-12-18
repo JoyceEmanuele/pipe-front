@@ -28,7 +28,7 @@ jobs:
 
       # Instalação das dependências
       - name: Install Dependencies
-        run: npm install
+        run: yarn
 
       # Build do projeto
       - name: Build Frontend
