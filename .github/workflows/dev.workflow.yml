@@ -40,6 +40,10 @@ jobs:
         with:
           credentials_json: ${{ secrets.GCP_CREDENTIALS }}
       
+      - name: Configure Docker to use Google Cloud Registry
+        run: |
+          gcloud auth configure-docker
+      
       - name: Verify GCP Access
         run: |
           # Listar os buckets do projeto para garantir que o acesso ao GCP esteja correto
