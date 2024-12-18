@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: front-v3
+  title: DAP Frontend
+  annotations:
+    github.com/project-slug: dielenergia/front-v3
+    github.com/project-repo: dielenergia/front-v3
+    sonarqube.org/project-key: front-v3
+  links:
+    - url: https://devdocs.dielenergia.com/storybook/
+      title: Storybook
+      icon: dashboard
+  tags:
+    - typescript
+    - frontend
+    - react
+spec:
+  type: website
+  system: dap
+  lifecycle: production
+  owner: software
+  consumesApis:
+    - api-server-api

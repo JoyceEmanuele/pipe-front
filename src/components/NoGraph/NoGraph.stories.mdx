@@ -1,0 +1,22 @@
+<!-- NoGraph.stories.mdx -->
+import { ArgsTable, Meta, Story, Canvas} from '@storybook/addon-docs';
+
+import { NoGraph } from '.';
+
+<Meta title='NoGraph' component={NoGraph} />;
+
+export const Template = (args) => (
+  <NoGraph {...args} />
+);
+
+# NoGraph
+
+<Canvas> 
+  <Story
+    name="default"
+    args={{
+      title="Histórico do Dispositivo"
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

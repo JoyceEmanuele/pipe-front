@@ -1,0 +1,25 @@
+<!-- SearchBox.stories.mdx -->
+import { ArgsTable, Meta, Story, Canvas} from '@storybook/addon-docs';
+
+import { SearchBox } from '.';
+
+<Meta title="SearchBox" component={SearchBox} />
+
+export const Template = (args) => (
+  <SearchBox {...args}/>
+);
+
+# SearchBox
+
+A SearchBox é um elemento de interface do usuário preparado para criar mecanismos de pesquisa. Ele atua como o campo para uma entrada de consulta
+ ou termo de pesquisa do usuário para pesquisar e recuperar informações relacionadas do banco de dados. 
+
+<Canvas>
+  <Story 
+    name="default"
+    args={{ 
+      type:"text"
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

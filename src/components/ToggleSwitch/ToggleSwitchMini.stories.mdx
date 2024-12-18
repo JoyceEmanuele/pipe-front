@@ -1,0 +1,138 @@
+<!-- ToggleSwitch.stories.mdx -->
+import { ArgsTable, Meta, Story , Canvas} from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions';
+
+import { ToggleSwitchMini } from '.';
+
+<Meta title="ToggleSwitchMini" component={ToggleSwitchMini} />
+
+export const Template = (args) => (
+    <ToggleSwitchMini {...args} />
+);
+
+# ToggleSwitchMini
+
+Componente que permite alterar entre dois valores de forma exclusíva, simulando um funcionamente de um interruptor (toggle switch), mas
+tendo tamanho menor que o ToggleSwitch.
+
+A propriedade `checked` é obrigatória.
+
+A propriedade `onOff` é opcional.
+
+A propriedade `disabled` é opcional.
+
+A propriedade `onClick` é opcional.
+
+## Propriedades:
+
+`checked`: False -> Switch desmarcado; True -> Switch marcado
+
+`onOff`: False -> Comportamento normal do componente; True -> Switch passa a considerar que quando checked for true, significa que o valor está desligado,
+                  portanto a cor da bola presente no componente será preta.
+
+`disabled`: Desabilita o componente
+
+`onClick`: Recebe o evento ao clicar no Switch
+
+<Canvas>
+  <Story
+    name="left-option"
+    argTypes={{
+      checked: { control: 'boolean' },
+      disabled: { control: 'boolean' },
+      label: { control: 'text' },
+      onOff: { control: 'boolean' },
+      style: { control: 'object' },
+      onClick: { action: 'clicked' },
+    }}
+    args={{
+      checked: false,
+      onOff: false
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="right-option"
+    argTypes={{
+      checked: { control: 'boolean' },
+      disabled: { control: 'boolean' },
+      label: { control: 'text' },
+      onOff: { control: 'boolean' },
+      style: { control: 'object' },
+      onClick: { action: 'clicked' },
+    }}
+    args={{
+      checked: true,
+      onOff: false
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="left-option-onOff"
+    argTypes={{
+      checked: { control: 'boolean' },
+      disabled: { control: 'boolean' },
+      label: { control: 'text' },
+      onOff: { control: 'boolean' },
+      style: { control: 'object' },
+      onClick: { action: 'clicked' },
+    }}
+    args={{
+      checked: false,
+      onOff: true
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="right-option-onOff"
+    argTypes={{
+      checked: { control: 'boolean' },
+      disabled: { control: 'boolean' },
+      label: { control: 'text' },
+      onOff: { control: 'boolean' },
+      style: { control: 'object' },
+      onClick: { action: 'clicked' },
+    }}
+    args={{
+      checked: true,
+      onOff: true
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="disabled"
+    argTypes={{
+      checked: { control: 'boolean' },
+      disabled: { control: 'boolean' },
+      label: { control: 'text' },
+      onOff: { control: 'boolean' },
+      style: { control: 'object' },
+      onClick: { action: 'clicked' },
+    }}
+    args={{
+      checked: false,
+      disabled: true,
+      onClick: action('onClick event')
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="styled switch"
+    argTypes={{
+      checked: { control: 'boolean' },
+      disabled: { control: 'boolean' },
+      label: { control: 'text' },
+      onOff: { control: 'boolean' },
+      style: { control: 'object' },
+      onClick: { action: 'clicked' },
+    }}
+    args={{
+      checked: false,
+      label: 'Teste',
+      style: {
+        margin: '20px',
+      }
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

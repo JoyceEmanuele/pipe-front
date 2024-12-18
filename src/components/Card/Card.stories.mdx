@@ -1,0 +1,65 @@
+<!-- Card.stories.mdx -->
+import { ArgsTable, Meta, Story , Canvas} from '@storybook/addon-docs';
+
+import { Card } from '.';
+import { CloseIcon } from '../../icons';
+
+<Meta title="Card" component={Card} />
+
+export const Template = (args) => (
+  <div style={{ width: '300px' }}>
+    <Card {...args}>
+      Conteúdo do card
+    </Card>
+  </div>
+);
+
+# Card
+A diferença entre o "noPadding" e o "noPaddingRelative" é que o segundo tem a propriedade "position: relative;".
+
+<Canvas>
+  <Story
+    name="basico"
+    args={{
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="com-titulo"
+    args={{
+      title: 'Título do Card',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="com-icone"
+    args={{
+      IconsContainer: () => (
+        <div style={{ cursor: 'pointer' }}>
+          <CloseIcon color={'white'} />
+        </div>
+      ),
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="padding-a"
+    args={{
+      title: 'Título do Card',
+      noPadding: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="padding-b"
+    args={{
+      noPaddingRelative: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

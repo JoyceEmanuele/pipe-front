@@ -1,0 +1,63 @@
+<!-- LoadingSpinner.stories.mdx -->
+
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+
+import { LoadingSpinner } from '.';
+
+<Meta title="Loading Spinner" component={LoadingSpinner} />
+
+export const Template = (args) =>
+  args && args.variant === 'secondary' ? (
+    <div
+      style={{
+        backgroundColor: '#878787',
+        height: '50px',
+        width: '50px',
+        position: 'relative',
+      }}
+    >
+      <LoadingSpinner {...args} />
+    </div>
+  ) : (
+    <div
+      style={{
+        height: '50px',
+        width: '50px',
+        position: 'relative',
+      }}
+    >
+      <LoadingSpinner {...args} />
+    </div>
+  );
+
+# Loading Spinner
+
+<Canvas>
+  <Story name="default" args={{ loading: true }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="primary-large"
+    args={{ loading: true, variant: 'primary', size: 'large' }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="secondary-large"
+    args={{ loading: true, variant: 'secondary', size: 'large' }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="secondary-small"
+    args={{ loading: true, size: 'small', variant: 'secondary' }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="primary-small"
+    args={{ loading: true, size: 'small', variant: 'primary' }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

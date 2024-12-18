@@ -1,0 +1,6 @@
+.Embed-container {
+  position: relative;
+  width: 102%;
+  height: 110%;
+  transform: translate(-35px, 1px);
+}

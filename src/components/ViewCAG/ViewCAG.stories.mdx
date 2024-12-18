@@ -1,0 +1,62 @@
+<!-- ViewCAG.stories.mdx -->
+
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+
+import { ViewCAG } from '.';
+
+<Meta title="ViewCAG" component={ViewCAG} />
+
+export const Template = (args) => <ViewCAG {...args} />;
+
+# Customized Buttons
+
+Botões existentes no DAP, alguns incluem ícones e dentre outras customizações.
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      machine: {
+        groupId: 1,
+        name: 'Máquina',
+        unitId: 1,
+        unitName: 'Unidade',
+        brandName: 'Marca',
+        type: 'Tipo',
+        model: 'Modelo',
+        refrigerationCapacity: '15',
+        refrigerationFluid: 'Fluido Refrigerante',
+        ratedPower: '20',
+        installationDate: 'Data da instalação',
+        automationDevId: 'DAMXXXXXXXXX',
+        capacityMeasurementUnit: 'TR',
+        refDUTId: 'DUTXXXXXXXXX'
+        applic: 'Aplicação',
+      },
+      assets: {
+        index: 0,
+        name: 'Ativo',
+        datId: 'DATXXXXXXXXX',
+        devId: 'DACXXXXXXXXX',
+        roleId: 2,
+        role: 'Condensadora',
+        type: 'Tipo',
+        brandName: 'Marca',
+        model: 'Modelo',
+        refrigerationCapacity: '15',
+        ratedPower: '20',
+        refrigerationFluid: 'Fluido Refrigerante',
+        capacityMeasurementUnit: 'TR',
+        devClientAssetId: 1,
+        datIndex: 0,
+        devIdPersisted: null,
+        chillerModel: 'Modelo do Chiller',
+        nominalCapacity: 120,
+        nominalVoltage: 220,
+        nominalFrequency: 60,
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

@@ -1,0 +1,111 @@
+<!-- NewTable.stories.mdx -->
+import { ArgsTable, Meta, Story, Canvas} from '@storybook/addon-docs';
+
+import { NewTable } from '.';
+
+<Meta title='NewTable' component={NewTable} />
+
+export const Template = (args) => (
+  <NewTable {...args} />
+);
+
+export const columns = [
+  {
+    value: "Coluna 1",
+    accessor: "COLUNA_1",
+    sortable: true,
+    textAlign: "right"
+  },
+  {
+    value: "Coluna 2",
+    accessor: "COLUNA_2",
+    width: '50px'
+  },
+  {
+    value: "Coluna 3",
+    render: (x => (x.COLUNA_3 && x.COLUNA_3.join(' '))),
+    textAlign: "left"
+  },
+  {
+    value: "Coluna 4",
+    render: (x => (x.COLUNA_1 && (<div> {`Texto da coluna 1: ${x.COLUNA_1}`} </div>)))
+  }
+];
+
+# NewTable
+
+Variação de tabela. Possui opção com ou sem barra de pesquisa (barra de pesquisa por padrão; argumento `noSearchBar` a desativa).
+Apresenta os dados da tabela paginados, com o número de itens por página definido por `pageSize`.
+
+A tabela exibe o conteúdo no array de objetos `data`, de acordo com:
+- O retorno da função especificada no campo `render` de cada elemento do array em `columns` (que será aplicada **a cada objeto do array `data`**), ou
+- O nome do campo especificado no campo `accessor`, de cada elemento do mesmo array.
+
+Na lista de objetos passados para `columns`, é possível especificar duas propriedades de CSS, `text-align` (sob o nome `textAlign`) e `width`.
+
+<ArgsTable of={NewTable}/>
+
+<Canvas> 
+  <Story 
+    name="default"
+    args={{ 
+      noSearchBar:false,
+      checkBox:true,
+      data:[
+        {
+          COLUNA_1: "l1c1",
+          COLUNA_2: "l1c2",
+          COLUNA_3: ["esse", "texto", "é", "um", "array", "cujo", "join", "está", "no", "campo", "render"]
+        },
+        {
+          COLUNA_1: "l2c1",
+          COLUNA_2: "l2c2",
+        },
+        {
+          COLUNA_1: "Essa linha está em outra página se pageSize for 2",
+          COLUNA_2: "",
+          COLUNA_3: ["coluna"]
+        }
+      ],
+      columns:columns,
+      pageSize:2
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas> 
+  <Story 
+    name="no search bar"
+    args={{ 
+      noSearchBar:true,
+      data:[],
+      columns:columns,
+      pageSize:20
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas> 
+  <Story 
+    name="checkbox"
+    args={{ 
+      noSearchBar:true,
+      checkBox:true,
+      data:[
+        {
+          UNIT_ID: 1,
+          checked: true,
+        },
+        {
+          UNIT_ID: 2,
+          checked: true,
+        }
+      ],
+      columns:columns,
+      pageSize:20
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

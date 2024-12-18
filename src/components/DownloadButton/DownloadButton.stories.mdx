@@ -1,0 +1,24 @@
+<!-- DownloadButton.stories.mdx -->
+
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+
+import { DownloadButton } from '.';
+
+<Meta title="DownloadButton" component={DownloadButton} />
+
+export const Template = (args) => <DownloadButton {...args} />;
+
+# Download Buttom
+
+Botão específico para download, sendo exibido um ícone de download sem texto algum. Recebe uma function como argumento para ser executada no click do botão.
+
+<Canvas>
+  <Story
+    name="download"
+    args={{
+      handleClick: null,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

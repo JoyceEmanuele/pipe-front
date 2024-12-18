@@ -1,0 +1,33 @@
+<!-- AssetConnection.stories.mdx -->
+import { ArgsTable, Meta, Story , Canvas} from '@storybook/addon-docs';
+
+import { AssetConnection } from '.';
+
+<Meta title="AssetConnection" component={AssetConnection} />
+
+export const Template = (args) => (
+  <AssetConnection {...args} />
+);
+
+# AssetConnection
+
+Componente utilizado para informar o status de conexão dos ativos. Parâmetros DEV_ID, DAM_ID e DUT_ID são opcionais.
+
+<Canvas> 
+  <Story 
+    name="without automation"
+    args={{ 
+      DEV_ID: 'DEV000000000',
+      isAutomation: false,
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story 
+    name="with automation"
+    args={{ 
+      DEV_ID: 'DEV000000000',
+      isAutomation: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

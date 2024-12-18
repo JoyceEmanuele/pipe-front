@@ -1,0 +1,7 @@
+.tooltipHolder {
+  pointer-events: auto !important;
+}
+.tooltipHolder:hover {
+  visibility: visible !important;
+  opacity: 1 !important;
+}

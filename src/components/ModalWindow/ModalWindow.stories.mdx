@@ -1,0 +1,59 @@
+<!-- ModalWindow.stories.mdx -->
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { useState } from 'react';
+
+import { ModalWindow } from '.';
+
+<Meta title="ModalWindow" component={ModalWindow} />
+
+export const Template = (args) => {
+  const [modalOpen, setModalOpen] = useState(false);
+  return (
+    <>
+      <button onClick={() => { setModalOpen(!modalOpen); }}>
+        {args.borderTop ? 'Com borderTop' : 'Sem borderTop'}
+      </button>
+      {modalOpen && (
+        <ModalWindow {...args} onClickOutside={() => { setModalOpen(false); }}>
+          <p>
+            Conteúdo do modal
+          </p>
+        </ModalWindow>
+      )}
+    </>
+  );
+};
+
+# ModalWindow
+A propriedade "onClickOutside" é uma função que será chamada quando o usuário clicar fora do modal, geralmente contém o código para fechar o modal.
+
+A propriedade "borderTop" adiciona uma barra azul em cima, e altera também a largura do modal.
+
+```jsx
+<button onClick={() => { setModalOpen(true) }}>
+  Abrir
+</button>
+{modalOpen && (
+  <ModalWindow onClickOutside={() => { setModalOpen(false) }}>
+    Conteúdo do modal
+  </ModalWindow>
+)}
+```
+
+<Canvas>
+  <Story
+    name="basico"
+    args={{
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="borderTop"
+    args={{
+      borderTop: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

@@ -1,0 +1,187 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Input } from ".";
+
+<Meta title="Input" component={Input} />
+
+export const Template = (args) => (
+  <Input align="center" style={{ width: "80%" }} {...args} />
+);
+
+# Input
+
+### Input é um componente geralmente utilizado para preenchimento de informações dentro de formulários, sendo amplamente encontrado na criação de e-mails e solicitações internas.
+
+<Canvas>
+  <Story
+    name="input default"
+    args={{
+      placeholder: "Nome",
+      name: "",
+      label: "Cidade",
+      value: "",
+      error: "",
+      mask: [],
+      disabled: false,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="input mask"
+    args={{
+      placeholder: "telefone",
+      name: "",
+      label: "Telefone",
+      value: "",
+      error: "",
+      mask: [
+        "(",
+        /[1-9]/,
+        /\d/,
+        /\d/,
+        ")",
+        " ",
+        /\d/,
+        /\d/,
+        /\d/,
+        "-",
+        /\d/,
+        /\d/,
+        /\d/,
+        /\d/,
+      ],
+      disabled: false,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="input disabled"
+    args={{
+      placeholder: "Telefone",
+      name: "",
+      label: "",
+      value: "",
+      error: "",
+      mask: [],
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="input error"
+    args={{
+      placeholder: "E-mail",
+      name: "",
+      label: "",
+      value: "teste@@.com.br",
+      error: "Por favor preencha o campo",
+      mask: [],
+      disabled: false,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable />
+
+## Input com valores
+
+<Canvas>
+  <Story name="values">
+    <div style={{ align: "center", justifyContent: "center" }}>
+      <span>Sem label</span>
+      <Input
+        style={{ marginBottom: "2em", width: "80%" }}
+        value="Texto do Input"
+      />
+      <span>Com label</span>
+      <Input
+        style={{ marginBottom: "2em", width: "80%" }}
+        label="Telefone"
+        value=""
+      />
+      <span>Com placeholder</span>
+      <Input
+        style={{ marginBottom: "2em", width: "80%" }}
+        label="Cidade"
+        placeholder="Cidade"
+      />
+    </div>
+  </Story>
+</Canvas>
+
+## Inputs com error warning
+
+<Canvas>
+  <Story name="error">
+    <div style={{ align: "center", justifyContent: "center" }}>
+      <span>Erro de e-mail</span>
+      <Input
+        style={{ marginBottom: "2px", width: "80%" }}
+        label="E-mail"
+        value="teste@@.com.br"
+        error="Por favor digite um e-mail válido"
+      />
+      <span>Error de senha</span>
+      <Input
+        style={{ marginBottom: "2px", width: "80%" }}
+        label="Senha"
+        value="****"
+        error="A senha deve possuir mais que 6 caracteres"
+        sufix="erro"
+      />
+    </div>
+  </Story>
+</Canvas>
+
+## Input com mask
+
+<Canvas>
+  <Story name="mask">
+    <div style={{ align: "center", justifyContent: "center" }}>
+      <span>Máscara de telefone</span>
+      <Input
+        style={{ marginBottom: "2px", width: "80%" }}
+        label="Telefone"
+        placeholder="Telefone"
+        value=""
+        mask={[
+          "(",
+          /[1-9]/,
+          /\d/,
+          /\d/,
+          ")",
+          " ",
+          /\d/,
+          /\d/,
+          /\d/,
+          "-",
+          /\d/,
+          /\d/,
+          /\d/,
+          /\d/,
+        ]}
+        disabled={false}
+      />
+    </div>
+  </Story>
+</Canvas>
+
+## Input desativada
+
+<Canvas>
+  <Story name="disabled">
+    <div style={{ align: "center", justifyContent: "center" }}>
+      <span>input desativada</span>
+      <Input
+        style={{ marginBottom: "2px", width: "80%" }}
+        label="Telefone"
+        value=""
+        disabled={true}
+      />
+    </div>
+  </Story>
+</Canvas>

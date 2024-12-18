@@ -1,0 +1,144 @@
+<!-- NewSelect.stories.mdx -->
+import { ArgsTable, Meta, Story, Canvas} from '@storybook/addon-docs';
+
+import { Select } from '.';
+
+
+<Meta title='NewSelect' component={Select} />
+
+export const Template = (args) => (
+  <Select style={{ marginBottom: "220px" }} {...args} />
+);
+
+export const items = ['DAM', 'DUT', 'DAC', "DRI"];
+
+export const options = [
+  {
+    label: 'DAM',
+    value: 'DAM',
+    iconName: 'ThermostatCircleIcon'
+  },
+  {
+    label: 'DUT',
+    value: 'DUT',
+    iconName: 'ThermostatSquareIcon'
+  },
+  {
+    label: 'DAC',
+    value: 'DAC',
+    iconName: 'ThermostatCircleIcon'
+  },
+  {
+    label: 'DRI',
+    value: 'DRI',
+    iconName: 'ThermostatCircleIcon'
+  }
+]
+
+# NewSelect
+
+<ArgsTable of={Select}/>
+
+# NewSelect
+<hr/>
+<br/>
+<br/>
+
+## Default
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      label: "Exemplo 1",
+      options: items,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Placeholder
+
+<Canvas>
+  <Story
+    name="Placeholder"
+    args={{
+      placeholder: "Escolha uma opção - Exemplo 2",
+      options: items,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Valor selecionado
+
+<Canvas>
+  <Story
+    name="Valor selecionado"
+    args={{
+      label: "Exemplo 3",
+      options: items,
+      value: "DUT"
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Valor selecionado escondido
+
+<Canvas>
+  <Story
+    name="Valor selecionado escondido"
+    args={{
+      label: "Exemplo 4",
+      options: items,
+      value: "DUT",
+      hideSelected: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Error
+
+<Canvas>
+  <Story
+    name="Error"
+    args={{
+      label: "Exemplo 3",
+      options: items,
+      error: "É necessário selecionar uma opção"
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Disabled
+
+<Canvas>
+  <Story
+    name="Disabled"
+    args={{
+      label: "Exemplo 4",
+      options: items,
+      disabled,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Options com Icon
+
+<Canvas>
+  <Story
+    name="Options com Icon"
+    args={{
+      label: "Exemplo 5",
+      options: options,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+

@@ -1,0 +1,61 @@
+<!-- Accordion.stories.mdx -->
+import { ArgsTable, Meta, Story , Canvas} from '@storybook/addon-docs';
+
+import { AccordionV2 } from '.';
+
+<Meta title="AccordionV2" component={AccordionV2} />
+
+export const Template = (args) => (
+      <AccordionV2 {...args} />
+);
+
+# Accordion
+
+<Canvas> 
+  <Story 
+    name="opened"
+    args={{
+      title: "título",
+      opened: true,
+      openedExtraHeader: false,
+      label: 'AccordionV2',
+      color: '#000000'
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story 
+    name="not opened"
+    args={{
+      title: "título",
+      opened: false,
+      openedExtraHeader: false,
+      label: 'AccordionV2',
+      color: '#000000'
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story 
+    name="with children"
+    args={{
+      title: "título",
+      opened: false,
+      openedExtraHeader: false,
+      label: 'Accordion',
+      children: [(<div>children 1</div>), (<div>children 2</div>)],
+      color: '#000000'
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story 
+    name="with openedExtraHeader"
+    args={{
+      title: "título",
+      opened: false,
+      openedExtraHeader: true,
+      label: 'Accordion',
+      children: [(<div>children 1</div>), (<div>children 2</div>)],
+      color: '#000000'
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

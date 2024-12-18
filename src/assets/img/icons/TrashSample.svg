@@ -1,0 +1,10 @@
+<svg width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 4349">
+<g id="Rectangle 4138">
+<rect x="1.5" y="3.5" width="7" height="9" rx="0.5" stroke="#FF0000"/>
+<rect x="1.5" y="3.5" width="7" height="9" rx="0.5" stroke="black" stroke-opacity="0.2"/>
+</g>
+<path id="Line 64" d="M0 1.5L10 1.5" stroke="#CC0000"/>
+<line id="Line 65" x1="3" y1="0.5" x2="7" y2="0.5" stroke="#CC0000"/>
+</g>
+</svg>

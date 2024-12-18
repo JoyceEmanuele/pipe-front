@@ -1,0 +1,48 @@
+<!-- Onoff.stories.mdx -->
+import { ArgsTable, Meta, Story, Canvas} from '@storybook/addon-docs';
+
+import { OnOff } from '.';
+
+<Meta title="OnOff" component={OnOff} />
+
+export const Template = (args) => (
+  <OnOff {...args}/>
+);
+
+# OnOff
+    Componente para indicar se algo está ligado ou desligado. Dependendo do size, o texto é alterado em que para "short" aparece Ligado/Desligado e outro size aparece Online/Offline
+
+<Canvas>
+  <Story 
+    name="ligado-short"
+    args={{ 
+      status:1,
+      size:"short"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story 
+    name="desligado-short"
+    args={{ 
+      status:0,
+      size:"short"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story 
+    name="online-long"
+    args={{ 
+      status:1,
+      size:"long"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story 
+    name="offline-long"
+    args={{ 
+      status:0,
+      size:"long"
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

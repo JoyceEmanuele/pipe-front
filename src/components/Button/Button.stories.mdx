@@ -1,0 +1,92 @@
+<!-- Button.stories.mdx -->
+import { ArgsTable, Meta, Story , Canvas} from '@storybook/addon-docs';
+
+import { Button } from '.';
+
+<Meta title="Button" component={Button} />
+
+export const Template = (args) => (
+      <Button {...args}>button</Button>
+);
+
+# Button
+
+<Canvas> 
+  <Story 
+    name="default"
+    args={{ 
+      variant: '',
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story 
+    name="primary"
+    args={{ 
+      variant: 'primary',
+    }}>
+    {Template.bind({})}
+  </Story>
+   <Story 
+    name="secondary"
+    args={{ 
+      variant: 'secondary',
+    }}>
+    {Template.bind({})}
+  </Story>
+   <Story 
+    name="blue-inv"
+    args={{ 
+      variant: 'blue-inv',
+  }}>
+  {Template.bind({})}
+  </Story>
+  <Story 
+    name="blue"
+    args={{ 
+      variant: 'blue',
+  }}>
+  {Template.bind({})}
+  </Story>
+  <Story 
+    name="borderblue"
+    args={{ 
+      variant: 'borderblue',
+  }}>
+  {Template.bind({})}
+  </Story>
+  <Story 
+    name="greendiel"
+    args={{ 
+      variant: 'greendiel',
+  }}>
+  {Template.bind({})}
+  </Story>
+   <Story 
+    name="red-inv"
+    args={{ 
+      variant: 'red-inv',
+  }}>
+  {Template.bind({})}
+  </Story>
+  <Story 
+    name="disabled"
+    args={{ 
+      variant: 'disabled',
+  }}>
+  {Template.bind({})}
+  </Story>
+  <Story 
+    name="grey"
+    args={{ 
+      variant: 'grey',
+  }}>
+  {Template.bind({})}
+  </Story>
+  <Story 
+    name="blue-white"
+    args={{ 
+      variant: 'blue-white',
+  }}>
+  {Template.bind({})}
+  </Story>
+</Canvas>

@@ -1,0 +1,55 @@
+name: Deploy Frontend to GCP
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout do código
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Configuração do Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # Criação do arquivo .env
+      - name: Create .env file
+        run: |
+          echo "REACT_APP_API_URL=https://api-dev-nav.dielenergia.com:9443" >> .env
+          echo "REACT_APP_WEBSOCKET_URL=wss://api-dev-nav.dielenergia.com:9443/wsfront" >> .env
+
+      # Instalação das dependências
+      - name: Install Dependencies
+        run: npm install
+
+      # Build do projeto
+      - name: Build Frontend
+        run: npm run build
+
+      # Configuração das credenciais do GCP
+      - name: Setup GCP Credentials
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+
+      # Upload dos arquivos para o bucket GCP
+      - name: Upload to GCP Bucket
+        run: |
+          gsutil -m rsync -r ./build gs://dash-frontend-bucket-dev
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
+
+      # Atualização do CDN (opcional)
+      - name: Invalidate Cloud CDN Cache
+        run: |
+          gcloud compute backend-buckets update dash-backend-bucket-dev --enable-cdn --cache-key-query-string-whitelist=ALL
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}

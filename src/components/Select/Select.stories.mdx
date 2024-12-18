@@ -1,0 +1,70 @@
+<!-- Select.stories.mdx -->
+import { ArgsTable, Meta, Story, Canvas} from '@storybook/addon-docs';
+
+import { Select } from '.';
+
+
+<Meta title='Select' component={Select} />
+
+export const Template = (args) => (
+  <Select style={{ marginBottom: "220px" }} {...args} />
+);
+
+export const items = ['DAM', 'DUT', 'DAC'];
+
+# Select
+O componente Select representa um controle que apresenta um menu de opções permitindo selecionar uma ou várias opções, esse componente é amplamente utilizado em formulários.
+
+
+
+<ArgsTable of={Select}/>
+
+# Select
+<hr/>
+<br/>
+<br/>
+
+## Default
+
+<Canvas> 
+  <Story 
+    name="Default"
+    args={{ 
+      placeholder: "Selecione o dispositivo",
+      options: items
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+## Error
+
+<Canvas> 
+  <Story 
+    name="Error"
+    args={{ 
+      placeholder: "Selecione o dispositivo",
+      options: items,
+      error: "É necessário selecionar uma opção",
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Disabled
+
+<Canvas> 
+  <Story 
+    name="Disabled"
+    args={{ 
+      placeholder: "Selecione o dispositivo",
+      options: items,
+      disabled: true
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+

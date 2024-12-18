@@ -1,0 +1,77 @@
+<!-- ToggleSwitch.stories.mdx -->
+import { ArgsTable, Meta, Story , Canvas} from '@storybook/addon-docs';
+
+import { ToggleSwitch } from '.';
+
+<Meta title="ToggleSwitch" component={ToggleSwitch} />
+
+export const Template = (args) => (
+    <ToggleSwitch {...args} />
+);
+
+# ToggleSwitch
+
+Componente que permite alterar entre dois valores de forma exclusíva, simulando um funcionamente de um interruptor (toggle switch).
+
+A propriedade `checked` é obrigatória.
+As propriedades `label`, `variant` e `sLabel` são opcionais. A propriedade sLabel tem efeito apenas quando o variant for 'bloq'
+
+Propriedades:
+`checked`: False -> Switch desmarcado; True -> Switch marcado
+`label`: Label à direita de component
+`variant`: auto -> Label dentro de componente com valores AUTOMÁTICO e MANUAL dependendo do checked;
+           bloq -> Label dentro de componente com valores BLOQUEADO e LIBERADO dependendo do checked;
+`sLabel`: Label dentro de componente para quando o `variant` for 'bloq'
+
+<Canvas>
+  <Story
+    name="left-option"
+    args={{
+      checked: false,
+      label: 'Parâmetro'
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="right-option"
+    args={{
+      checked: true,
+      label: 'Parâmetro'
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="left-option-auto"
+    args={{
+      checked: false,
+      variant: "auto"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="right-option-auto"
+    args={{
+      checked: true,
+      variant: "auto"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="left-option-bloq"
+    args={{
+      checked: false,
+      variant: "bloq",
+      sLabel: "Bloqueado"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="right-option-bloq"
+    args={{
+      checked: true,
+      variant: "bloq",
+      sLabel: "LIVRE"
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

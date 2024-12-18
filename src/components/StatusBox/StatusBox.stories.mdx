@@ -1,0 +1,48 @@
+<!-- SearchBox.stories.mdx -->
+import { ArgsTable, Meta, Story, Canvas} from '@storybook/addon-docs';
+
+import { StatusBox } from '.';
+
+<Meta title="StatusBox" component={StatusBox} />
+
+export const Template = (args) => (
+  <StatusBox {...args}>{args.status}</StatusBox>
+);
+
+# StatusBox
+
+O Status Box é um componente para mostrar o estado de uma máquina ou conexão.
+Se for passado o status ONLINE sua cor fica azul, caso contrário sua cor fica cinza.
+Também pode ser passada uma cor específica, caso necessário.
+
+<Canvas>
+  <Story
+    name="default"
+    args={{
+      status:"DEFAULT"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="offline"
+    args={{
+      status:"OFFLINE"
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="online"
+    args={{
+      status:"ONLINE"
+    }}>
+    {Template.bind({})}
+  </Story>
+   <Story
+    name="customizedColor"
+    args={{
+      status:"ATENÇÃO",
+      color: "#ff852b"
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

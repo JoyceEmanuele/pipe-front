@@ -1,0 +1,22 @@
+<!-- QuickSelection.stories.mdx -->
+
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+
+import { QuickSelection } from '.';
+
+<Meta title="QuickSelection" component={QuickSelection} />
+
+export const Template = (args) => <QuickSelection {...args} />;
+
+# QuickSelection
+
+Caixa de seleção de datas rápidas.
+
+<Canvas>
+  <Story
+    name="default"
+    args={{ setDate: () => console.log('Selecionar data') }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

@@ -1,0 +1,23 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs";
+import { MenuMobile } from ".";
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from 'store';
+
+<Meta title="MenuMobile" component={MenuMobile} />
+
+export const Template = (args) => (
+  <Router>
+    <Provider store={store}>
+      <MenuMobile {...args} />
+    </Provider>
+  </Router>
+);
+
+<Canvas> 
+  <Story 
+    name="MenuMobile"
+    args={{setIsModalNavItemsOpen:() => (true)}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

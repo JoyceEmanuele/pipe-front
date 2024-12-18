@@ -1,0 +1,31 @@
+<!-- OnlineOffline.stories.mdx -->
+import { ArgsTable, Meta, Story, Canvas} from '@storybook/addon-docs';
+
+import { OnlineOffline } from '.';
+
+<Meta title="OnlineOffline" component={OnlineOffline} />
+
+export const Template = (args) => (
+  <OnlineOffline {...args}/>
+);
+
+# OnlineOffline
+
+Componente para indicar se algo está ligado ou desligado. Dependendo do size, o texto é alterado em que para "short" aparece Ligado/Desligado e outro size aparece Online/Offline
+
+<Canvas>
+  <Story 
+    name="online"
+    args={{ 
+      status: "ONLINE",
+    }}>
+    {Template.bind({})}
+  </Story>
+    <Story 
+    name="offline"
+    args={{ 
+      status: "OFFLINE",
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

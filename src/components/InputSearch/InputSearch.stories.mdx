@@ -1,0 +1,27 @@
+<!-- Radio.stories.mdx -->
+import { ArgsTable, Meta, Story , Canvas} from '@storybook/addon-docs';
+
+import { InputSearch } from '.';
+
+<Meta title="InputSearch" component={InputSearch} />
+
+export const Template = (args) => (
+    <InputSearch {...args} />
+);
+
+# Input Search
+<br/>
+
+Componente utilizado para executar pesquisas nas páginas através de inputs de texto. As propriedade `disabled` e `error` são opcionais.
+
+<Canvas>
+  <Story
+  name="inputSearch"
+  args={{
+    placeholder: "Input Search",
+    name: "Input Search",
+    value: null,
+  }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

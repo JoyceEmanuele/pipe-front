@@ -1,0 +1,47 @@
+<!-- SearchBox.stories.mdx -->
+import { ArgsTable, Meta, Story, Canvas} from '@storybook/addon-docs';
+
+import { L1StateBox } from '.';
+
+<Meta title="L1StateBox" component={L1StateBox} />
+
+export const Template = (args) => (
+  <L1StateBox {...args}>{"STATUS"}</L1StateBox>
+);
+
+# StateBox
+
+O State Box é um componente para mostrar o estado de uma máquina ou conexão.
+Se for passado o status 1 sua cor fica verde, caso contrário sua cor fica vermelha.
+Também pode ser passada uma cor específica, caso necessário.
+
+<Canvas>
+  <Story
+    name="default"
+    args={{
+    }}>
+    {Template.bind({})}
+  </Story>
+   <Story
+    name="online"
+    args={{
+      status:1
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="offline"
+    args={{
+      status:0,
+    }}>
+    {Template.bind({})}
+  </Story>
+   <Story
+    name="customizedColor"
+    args={{
+      status:0,
+      color:"#DAA520"
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

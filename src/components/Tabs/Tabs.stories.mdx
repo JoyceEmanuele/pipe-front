@@ -1,0 +1,55 @@
+<!-- Tabs.stories.mdx -->
+import { ArgsTable, Meta, Story, Canvas} from '@storybook/addon-docs';
+
+import { Tabs } from '.';
+import {MemoryRouter} from 'react-router-dom';
+
+<Meta title='Tabs' component={Tabs} />
+
+export const Template = (args) => (
+  <MemoryRouter>
+    <Tabs style={{ paddingLeft: "220px" }} {...args} />
+  </MemoryRouter>
+);
+
+export const tabs = [
+                      {
+                        title: 'Faturas',
+                        link: '',
+                        isActive: true,
+                        visible: true,
+                        ref: null
+                      },
+                      {
+                        title: 'Medidores',
+                        link: '',
+                        isActive: false,
+                        visible: true,
+                        ref: null
+                      },
+                    ];
+
+# Tabs
+O componente Tabs é um componente da interface do usuário que renderiza e exibe subseções para os usuários, organizando o conteúdo em categorias para fácil acesso, economizando espaço.
+
+
+<ArgsTable of={Tabs}/>
+
+# Tabs
+<hr/>
+<br/>
+<br/>
+
+## Default
+
+<Canvas> 
+  <Story 
+    name="Default"
+    args={{ 
+      links: tabs,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+

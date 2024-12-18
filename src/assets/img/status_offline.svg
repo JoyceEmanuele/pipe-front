@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="70"
+   height="26"
+   viewBox="0 0 18.520834 6.8791666"
+   version="1.1"
+   id="svg29154"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs29151" />
+  <g
+     id="layer1"
+     transform="matrix(0.83295502,0,0,0.79913138,15.687066,-62.175667)">
+    <rect
+       style="fill:#abb0b4;fill-opacity:1;stroke:none;stroke-width:0.165;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:0.165, 0.329999"
+       id="rect22487"
+       width="22.235094"
+       height="8.608305"
+       x="-18.833029"
+       y="77.804062"
+       ry="2.0966945" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.71204px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.0928015"
+       x="-15.54788"
+       y="83.435272"
+       id="text22491"><tspan
+         id="tspan22489"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff;stroke-width:0.0928015"
+         x="-15.54788"
+         y="83.435272">OFFLINE</tspan></text>
+  </g>
+</svg>

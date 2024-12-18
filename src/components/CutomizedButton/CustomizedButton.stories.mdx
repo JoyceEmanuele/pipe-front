@@ -1,0 +1,24 @@
+<!-- CustomizedButton.stories.mdx -->
+
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+
+import { CustomizedButton } from '.';
+
+<Meta title="CustomizedButton" component={CustomizedButton} />
+
+export const Template = (args) => <CustomizedButton {...args} />;
+
+# Customized Buttons
+
+Botões existentes no DAP, alguns incluem ícones e dentre outras customizações.
+
+<Canvas>
+  <Story
+    name="download"
+    args={{
+      description: 'Download',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

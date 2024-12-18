@@ -1,0 +1,95 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs";
+import { ConnectedDevices } from ".";
+
+<Meta title="ConnectedDevices" component={ConnectedDevices} />
+
+export const Template = (args) => (
+  <ConnectedDevices align="center" style={{ width: "100%" }} {...args} />
+);
+
+# ConnectedDevices
+
+### ConnectedDevices é um componente utilizado na tela de overview para informar a contagem de unidades, dispositivos, ativos e utilitários.
+
+<Canvas>
+  <Story
+    name="ConnectedDevices Principal"
+    args={{
+      unitsCount: {onlineUnits: 10, offlineUnits: 10},
+      devicesCount: {onlineDevs: 10000, offlineDevs: 300},
+      utils: {
+        maquinas: {
+          catalogadas: 1000,
+          monitoradas: {
+            online: 950,
+            offline: 50,
+          }
+        },
+        ambientes: {
+          online: 500,
+          offline: 10,
+        },
+        energia: {
+          online: 1000,
+          offline: 20,
+        },
+        agua: {
+          online: 5000,
+          offline: 300,
+        },
+        iluminacao: {
+          online: 2000,
+          offline: 10,
+        },
+        nobreak: {
+          online: 3000,
+          offline: 10,
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+    <Story
+    name="ConnectedDevices"
+    args={{
+      isLoading: true,
+      unitsCount: {onlineUnits: 10, offlineUnits: 10},
+      devicesCount: {onlineDevs: 10000, offlineDevs: 300},
+      utils: {
+        maquinas: {
+          catalogadas: 1000,
+          monitoradas: {
+            online: 950,
+            offline: 50,
+          }
+        },
+        ambientes: {
+          online: 500,
+          offline: 10,
+        },
+        energia: {
+          online: 1000,
+          offline: 20,
+        },
+        agua: {
+          online: 5000,
+          offline: 300,
+        },
+        iluminacao: {
+          online: 2000,
+          offline: 10,
+        },
+        nobreak: {
+          online: 3000,
+          offline: 10,
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable />
+

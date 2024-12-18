@@ -1,0 +1,35 @@
+<!-- AssetStatus.stories.mdx -->
+import { ArgsTable, Meta, Story , Canvas} from '@storybook/addon-docs';
+
+import { AssetStatus } from '.';
+
+<Meta title="AssetStatus" component={AssetStatus} />
+
+export const Template = (args) => (
+  <AssetStatus {...args} />
+);
+
+# AssetStatus
+
+Componente utilizado para informar telemetrias de dispositivos, como: status de conexão, intensidade de WiFi e última leitura. Parâmetros DEV_ID, DAM_ID e DUT_ID são opcionais.
+
+<Canvas>
+  <Story
+    name="without automation"
+    args={{
+      isAutomation: false,
+      DEV_ID: 'DEV000000000',
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="with automation"
+    args={{
+      isAutomation: true,
+      DUT_ID: 'DUT000000000',
+      DAM_ID: 'DAM000000000',
+      DEV_ID: 'DEV000000000',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

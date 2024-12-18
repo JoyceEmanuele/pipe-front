@@ -1,0 +1,58 @@
+<!-- Checkbox.stories.mdx -->
+import { ArgsTable, Meta, Story , Canvas} from '@storybook/addon-docs';
+
+import { Checkbox } from '.';
+
+<Meta title="Checkbox" component={Checkbox} />
+
+export const Template = (args) => (
+    <Checkbox {...args} />
+);
+
+# Checkbox
+
+As propriedades `label`, `onClick`, `link`, `checked` e `checkableItem` são opcionais.
+
+<Canvas>
+  <Story
+    name="not-checked"
+    args={{
+      label: 'Checkbox',
+      checked: false,
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="checked"
+    args={{
+      label: 'Checkbox',
+      checked: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="not-checked-checkableItem"
+    args={{
+      label: 'Checkbox',
+      checkableItem: { checked: false },
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="checked-checkableItem"
+    args={{
+      label: 'Checkbox',
+      checkableItem: { checked: true },
+    }}>
+    {Template.bind({})}
+  </Story>
+    <Story
+    name="checked-checkableItem-with-link"
+    args={{
+      label: 'DAP',
+      checkableItem: { checked: false },
+      link: 'https://dash.dielenergia.com/'
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

@@ -1,0 +1,26 @@
+<!-- ChangeColor.stories.mdx -->
+
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+
+import { ChangeColor } from '.';
+
+<Meta title="ChangeColor" component={ChangeColor} />
+
+export const Template = (args) => (
+    <ChangeColor {...args} />
+);
+
+
+# Button
+
+<Canvas>
+  <Story name="default" args={{
+    data: [{ color: '#363BC4', description: 'TAMOIO123 | Outubro 2021' },
+          { color: '#FF4C00', description: 'TAMOIO123 | Outubro 2020' },
+          { color: '#EC4CAC', description: 'TAMOIO123 | Outubro 2019' },
+          { color: '#FFBE16', description: 'TAMOIO123 | Outubro 2018' },
+        ]
+  }}>
+  {Template.bind({})}
+  </Story>
+</Canvas>

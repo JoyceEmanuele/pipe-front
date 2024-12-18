@@ -1,0 +1,38 @@
+<!-- AlertsTable.stories.mdx -->
+import { ArgsTable, Meta, Story , Canvas} from '@storybook/addon-docs';
+import { AlertsTable } from '.';
+
+<Meta title="AlertsTable" component={AlertsTable} />
+
+export const Template = (args) => (
+  <AlertsTable {...args} />
+);
+
+# AlertsTable
+
+<Canvas>
+  <Story
+    name="with data"
+    args={{
+      data: [
+        { name: 'Notification 1', filter: 'Filter 1', condition: 'Condition 1', dest: 'Recipient 1' },
+        { name: 'Notification 2', filter: 'Filter 2', condition: 'Condition 2', dest: 'Recipient 2' },
+        // Add more data items as needed
+      ],
+      onDelete: (item) => console.log('Delete:', item),
+      onEdit: (item) => console.log('Edit:', item),
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="without data"
+    args={{
+      data: [],
+      onDelete: () => console.log('Delete clicked on empty table'),
+      onEdit: () => console.log('Edit clicked on empty table'),
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

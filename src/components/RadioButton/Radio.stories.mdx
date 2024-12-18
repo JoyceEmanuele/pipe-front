@@ -1,0 +1,45 @@
+<!-- Radio.stories.mdx -->
+import { ArgsTable, Meta, Story , Canvas} from '@storybook/addon-docs';
+
+import { RadioButton } from '.';
+
+<Meta title="RadioButton" component={RadioButton} />
+
+export const Template = (args) => (
+    <RadioButton {...args} />
+);
+
+# Radio Button
+<br/>
+
+### Radio button é um componente geralmente utilizado para definir escolhas dentro de formulários e na ativação de configurações.
+
+<Canvas>
+  <Story
+  name="radio"
+  args={{
+    label: "Radio button",
+    checked: true,
+    checkedColor: "blue",
+    uncheckedColor: "",
+  }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+<ArgsTable/>
+
+## Radio buttons 
+
+<Story name='checked'>
+    <div style={{display: 'flex', flexWrap: 'wrap'}}> 
+       <ul style={{listStyleType: 'none'}}>
+        <li><RadioButton style={{marginBottom: '2em'}} label='Radio button checked' checked={true} checkedColor='blue' uncheckedColor=''/></li>
+        <li><RadioButton style={{marginBottom: '2em'}} label='Radio button unchecked' checked={true} checkedColor='' uncheckedColor=''/></li>
+        <li><RadioButton style={{marginBottom: '2em'}} label='Radio button unchecked' checked={true} checkedColor='red' uncheckedColor=''/></li>
+        <li><RadioButton style={{marginBottom: '2em'}} label='Radio button unchecked' checked={true} checkedColor='' uncheckedColor='green'/></li>
+        </ul>
+    </div>
+</Story>
+

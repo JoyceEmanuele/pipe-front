@@ -1,0 +1,21 @@
+import { Divider } from ".";
+
+export const Template = (args) => (
+  <Divider />
+);
+
+<Canvas>
+  <Story
+    name="Divider"
+    args={{}}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Divider"
+    args={{
+      width: 50,
+      height: 1
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

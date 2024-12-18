@@ -1,0 +1,73 @@
+<!-- Loader.stories.mdx -->
+import { ArgsTable, Meta, Story, Canvas} from '@storybook/addon-docs';
+
+import { LoaderExporting } from '.';
+
+<Meta
+  title="LoaderExporting"
+  component={LoaderExporting}
+/>
+
+export const Template = (args) => (
+  (args && args.variant && args.variant === "secondary") ?
+    <div style={{ backgroundColor: '#878787' }}>
+      <LoaderExporting {...args} />
+    </div>
+  : <LoaderExporting {...args} />
+);
+
+# LoaderExporting
+
+<Canvas>
+  <Story
+    name="default"
+    args={{}}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="primary"
+    args={{
+      variant: 'primary',
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="secondary"
+    args={{
+      variant: 'secondary',
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="primary-large"
+    args={{
+      variant: 'primary',
+      size: 'large'
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="secondary-large"
+    args={{
+      variant: 'secondary',
+      size: 'large',
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="primary-small"
+    args={{
+      variant: 'primary',
+      size: 'small'
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="secondary-small"
+    args={{
+      variant: 'secondary',
+      size: 'small',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
