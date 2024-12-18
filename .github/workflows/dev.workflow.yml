@@ -41,8 +41,11 @@ jobs:
           credentials_json: ${{ secrets.GCP_CREDENTIALS }}
       
       - name: Debug GCP Credentials
+        env:
+          GCP_CRED: ${{ secrets.GCP_CREDENTIALS }}
         run: |
-          echo "${{ secrets.GCP_CREDENTIALS }}" > creds.json
+          echo "${GCP_CRED}" > creds.json
+          cat creds.json
           gcloud auth activate-service-account --key-file=creds.json
           gcloud auth list
           gsutil ls gs://dash-frontend-bucket-dev
